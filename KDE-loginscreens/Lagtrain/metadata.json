@@ -1,0 +1,20 @@
+{
+    "KPackageStructure": "Plasma/LookAndFeel",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "",
+                "Name": "kloud"
+            }
+        ],
+        "Category": "",
+        "Description": "Lagtrain for for Plasma6",
+        "Id": "Lagtrain",
+        "License": "GPLv3",
+        "Name": "Lagtrain",
+        "Website": ""
+    },
+    "Keywords": "Desktop;Workspace;Appearance;Look and Feel;Logout;Lock;Suspend;Shutdown;Hibernate;",
+    "X-Plasma-APIVersion": "2"
+}
+
