@@ -1,0 +1,19 @@
+{
+    "KPackageStructure": "Plasma/LookAndFeel",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "",
+                "Name": "kloud"
+            }
+        ],
+        "Category": "",
+        "Description": "Matrix for for Plasma6",
+        "Id": "MatrixKDEGlow",
+        "License": "GPLv3",
+        "Name": "Matrix code 'Welcome to KDE' (glowing)",
+        "Website": ""
+    },
+    "Keywords": "Desktop;Workspace;Appearance;Look and Feel;Logout;Lock;Suspend;Shutdown;Hibernate;",
+    "X-Plasma-APIVersion": "2"
+}
