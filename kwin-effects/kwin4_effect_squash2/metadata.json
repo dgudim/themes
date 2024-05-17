@@ -1,0 +1,26 @@
+{
+  "KPackageStructure": "KWin/Effect",
+  "KPlugin": {
+    "Authors": [
+      {
+        "Email": "rivolaks@hot.ee, vlad.zahorodnii@kde.org"
+      }
+    ],
+    "Category": "Appearance",
+    "Description": "Squash windows when they are minimized (v2)",
+    "EnabledByDefault": false,
+    "Icon": "preferences-system-windows-effect-squash",
+    "Id": "kwin4_effect_squash2",
+    "License": "GPL",
+    "Name": "Squash 2",
+    "ServiceTypes": [
+      "KWin/Effect"
+    ]
+  },
+  "X-KDE-Ordering": 60,
+  "X-KWin-Exclusive-Category": "minimize",
+  "X-KDE-PluginKeyword": "kwin4_effect_squash2",
+  "X-KWin-Config-TranslationDomain": "kwin_effects",
+  "X-Plasma-API": "javascript",
+  "X-Plasma-MainScript": "code/main.js"
+}

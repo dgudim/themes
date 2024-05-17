@@ -1,0 +1,22 @@
+{
+    "KPackageStructure": "KWin/Effect",
+    "KPlugin": {
+        "Category": "Appearance",
+        "Description": "Make popups kinetically fade in and out when they are shown or hidden",
+        "EnabledByDefault": false,
+        "Icon": "preferences-system-windows-effect-fadingpopups",
+        "Id": "kwin4_effect_fadingpopups_kinetic",
+        "License": "GPL",
+        "Name": "Fading Popups Kinetic",
+        "ServiceTypes": [
+            "KWin/Effect"
+        ],
+        "Version": "1.1",
+        "ServiceTypes": ["KWin/Effect"]
+    },
+    "X-KDE-Ordering": "60",
+    "X-KDE-PluginKeyword": "kwin4_effect_fadingpopups_kinetic",
+    "X-KWin-Config-TranslationDomain": "kwin_effects",
+    "X-Plasma-API": "javascript",
+    "X-Plasma-MainScript": "code/main.js"
+}

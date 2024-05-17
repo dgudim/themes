@@ -9,6 +9,10 @@ Splash screens made from cool gifs and videos I found online
 
 You can also find theme here: https://www.pling.com/u/bermer
 
+## Kwin effects
+
+Some kwin effects I like ported to kwin6
+
 ## css
 
 Css themes for websites

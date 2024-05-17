@@ -1,0 +1,23 @@
+{
+    "KPackageStructure": "KWin/Effect",
+    "KPlugin": {
+        "Category": "Appearance",
+        "Description": "Kinetically squash windows when they are minimized",
+        "EnabledByDefault": false,
+        "Icon": "preferences-system-windows-effect-squash",
+        "Id": "kwin4_effect_minimize_kinetic",
+        "License": "GPL",
+        "Name": "Minimize Kinetic",
+        "ServiceTypes": [
+            "KWin/Effect"
+        ],
+        "Version": "1",
+        "ServiceTypes": ["KWin/Effect"]
+    },
+    "X-KDE-Ordering": "60",
+    "X-KWin-Exclusive-Category": "minimize",
+    "X-KDE-PluginKeyword": "kwin4_effect_minimize_kinetic",
+    "X-KWin-Config-TranslationDomain": "kwin_effects",
+    "X-Plasma-API": "javascript",
+    "X-Plasma-MainScript": "code/main.js"
+}
