@@ -49,24 +49,24 @@ var squashEffect = {
                 {
                     type: Effect.Size,
                     from: {
-                        value1: windowRect.width + 0.3 * (targetRect.width - windowRect.width),
-                        value2: windowRect.height + 0.3 * (targetRect.height - windowRect.height)
+                        value1: windowRect.width + 0.3 * (iconRect.width - windowRect.width),
+                        value2: windowRect.height + 0.3 * (iconRect.height - windowRect.height)
                     },
                     to: {
-                        value1: targetRect.width,
-                        value2: targetRect.height
+                        value1: iconRect.width,
+                        value2: iconRect.height
                     },
                     curve: QEasingCurve.OutExpo
                 },
                 {
                     type: Effect.Translation,
                     from: {
-                        value1: 0.3 * (targetRect.x - windowRect.x - (windowRect.width - targetRect.width) / 2),
-                        value2: 0.3 * (targetRect.y - windowRect.y - (windowRect.height - targetRect.height) / 2)
+                        value1: 0.3 * (iconRect.x - windowRect.x - (windowRect.width - iconRect.width) / 2),
+                        value2: 0.3 * (iconRect.y - windowRect.y - (windowRect.height - iconRect.height) / 2)
                     },
                     to: {
-                        value1: targetRect.x - windowRect.x - (windowRect.width - targetRect.width) / 2,
-                        value2: targetRect.y - windowRect.y - (windowRect.height - targetRect.height) / 2
+                        value1: iconRect.x - windowRect.x - (windowRect.width - iconRect.width) / 2,
+                        value2: iconRect.y - windowRect.y - (windowRect.height - iconRect.height) / 2
                     },
                     curve: QEasingCurve.OutExpo
                 },
@@ -116,8 +116,8 @@ var squashEffect = {
                 {
                     type: Effect.Size,
                     from: {
-                        value1: targetRect.width + 0.3 * (windowRect.width - targetRect.width),
-                        value2: targetRect.height + 0.3 * (windowRect.height - targetRect.height)
+                        value1: iconRect.width + 0.3 * (windowRect.width - iconRect.width),
+                        value2: iconRect.height + 0.3 * (windowRect.height - iconRect.height)
                     },
                     to: {
                         value1: windowRect.width,
@@ -127,8 +127,8 @@ var squashEffect = {
                 {
                     type: Effect.Translation,
                     from: {
-                        value1: 0.7 * (targetRect.x - windowRect.x - (windowRect.width - targetRect.width) / 2),
-                        value2: 0.7 * (targetRect.y - windowRect.y - (windowRect.height - targetRect.height) / 2)
+                        value1: 0.7 * (iconRect.x - windowRect.x - (windowRect.width - iconRect.width) / 2),
+                        value2: 0.7 * (iconRect.y - windowRect.y - (windowRect.height - iconRect.height) / 2)
                     },
                     to: {
                         value1: 0.0,
