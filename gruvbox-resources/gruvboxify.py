@@ -50,10 +50,11 @@ for char in theme_file.read():
         color += char
     elif start:
         start = False
-        matched_color_curr = find_closest_color(color)
-        source_colors.append(color)
-        matched_colors.append(matched_color_curr)
-        print(color + " --> " + matched_color_curr)
+        if len(color) == 6 or len(color) == 3:
+            matched_color_curr = find_closest_color(color)
+            source_colors.append(color)
+            matched_colors.append(matched_color_curr)
+            print(color + " --> " + matched_color_curr)
         color = ""
     if char == '#':
         start = True
