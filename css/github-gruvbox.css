@@ -815,5 +815,9 @@
 	{
 		fill: #ebdbb2 !important;
 	}
-	
+
+	/* the progress bar at the top of the page when it's loading, blue by default */
+	.turbo-progress-bar {
+    		background-color: var(--gruv-green-light);
+	}
 }
