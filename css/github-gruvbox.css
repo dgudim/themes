@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           Github GruvBox Extended+
 @namespace      github.com
-@version        2.0.7
+@version        2.1.0
 @description    A GruvBox theme for GitHub.
 @author         Kloud
 ==/UserStyle== */
@@ -59,6 +59,10 @@
     }
     
     body {
+        --diffBlob-addition-bgColor-line: #8ec07c20 !important;
+        --diffBlob-addition-bgColor-num: #39583af0 !important;
+        --diffBlob-deletion-bgColor-line: #fb493420 !important;
+        
         --color-canvas-default: var(--gruv-bg0) !important;
         --color-canvas-inset: var(--gruv-bg0_h) !important;
         
@@ -119,6 +123,7 @@
         --button-primary-bgColor-hover: var(--gruv-green-dark) !important;
         --button-primary-bgColor-rest: var(--gruv-green-dark) !important;
         --button-primary-bgColor-disabled: var(--gruv-bg2) !important;
+        --button-default-bgColor-disabled: var(--gruv-bg0) !important;
         --reactionButton-selected-bgColor-rest: var(--gruv-bg2) !important;
         --reactionButton-selected-bgColor-hover: var(--gruv-bg3) !important;
         --reactionButton-selected-fgColor-rest: var(--gruv-green-light) !important;
@@ -259,7 +264,7 @@
     }
 
     .blob-num {
-        color: var(--gruv-bg3) !important;
+        color: var(--gruv-fg4) !important;
     }
 
     .blob-num:hover {
@@ -815,8 +820,8 @@
 	{
 		fill: #ebdbb2 !important;
 	}
-
-	/* the progress bar at the top of the page when it's loading, blue by default */
+    
+        /* the progress bar at the top of the page when it's loading, blue by default */
 	.turbo-progress-bar {
     		background-color: var(--gruv-green-light);
 	}
