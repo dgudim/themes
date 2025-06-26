@@ -106,7 +106,7 @@ Rectangle {
                 // https://bugreports.qt.io/browse/QTBUG-67007
                 renderType: Screen.devicePixelRatio % 1 !== 0 ? Text.QtRendering : Text.NativeRendering
                 anchors.verticalCenter: parent.verticalCenter
-                text: "Everyone's Connected"
+                text: "Everyone's Konnected"
             }
             Image {
                 source: "images/kde.svgz"
