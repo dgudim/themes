@@ -1,0 +1,12 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "Bermer"
+            }
+        ],
+        "Id": "painted_landscape",
+        "License": "CC-BY-SA-4.0",
+        "Name": "Painted landscape"
+    }
+}
