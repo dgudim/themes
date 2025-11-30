@@ -55,7 +55,7 @@
 	}
 
 	div[data-target="react-app.reactRoot"] > div {
-		background-color: var(--gruv-bg0_h) !important;
+		background-color: var(--gruv-bg0) !important;
 	}
 
 	body {
