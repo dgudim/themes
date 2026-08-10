@@ -1,0 +1,846 @@
+/* ==UserStyle==
+@name         GitLab Gruvbox Dark
+@version      20260810.12.57
+@namespace    gitlab.com
+@description  Gruvbox theme for gitlab
+@license      No License
+==/UserStyle== */
+
+@-moz-document regexp(".*gitlab.*") {
+:root {
+    /* Gruvbox palette */
+    --gb-bg0-hard: #1d2021;
+    --gb-bg0: #282828;
+    --gb-bg1: #3c3836;
+    --gb-bg2: #504945;
+    --gb-bg3: #665c54;
+    --gb-fg0: #fbf1c7;
+    --gb-fg1: #ebdbb2;
+    --gb-fg2: #d5c4a1;
+    --gb-gray: #928374;
+    --gb-red: #fb4934;
+    --gb-green: #b8bb26;
+    --gb-yellow: #fabd2f;
+    --gb-blue: #83a598;
+    --gb-purple: #d3869b;
+    --gb-aqua: #8ec07c;
+    --gb-orange: #fe8019;
+
+    /* Modern GitLab design tokens */
+    --gl-background-color-default: var(--gb-bg0);
+    --gl-background-color-subtle: var(--gb-bg0-hard);
+    --gl-background-color-strong: var(--gb-bg1);
+    --gl-background-color-section: var(--gb-bg1);
+    --gl-background-color-overlap: var(--gb-bg2);
+
+    --gl-text-color-default: var(--gb-fg1);
+    --gl-text-color-subtle: var(--gb-fg2);
+    --gl-text-color-strong: var(--gb-fg0);
+    --gl-text-color-disabled: var(--gb-gray);
+    --gl-text-color-link: var(--gb-blue);
+
+    --gl-border-color-default: var(--gb-bg2);
+    --gl-border-color-subtle: var(--gb-bg1);
+    --gl-border-color-strong: var(--gb-bg3);
+  }
+
+  html,
+  body,
+  .page-with-contextual-sidebar,
+  .content-wrapper,
+  .layout-page,
+  .gl-bg-default {
+    background: var(--gb-bg0) !important;
+    color: var(--gb-fg1) !important;
+  }
+
+  /* Header and navigation */
+  .top-bar-container,
+  .navbar,
+  .super-sidebar,
+  .super-sidebar-nav,
+  .contextual-nav,
+  .nav-sidebar {
+    background: var(--gb-bg0-hard) !important;
+    border-color: var(--gb-bg2) !important;
+  }
+
+  .super-sidebar a,
+  .nav-sidebar a,
+  .top-bar-container a {
+    color: var(--gb-fg2) !important;
+  }
+
+  .super-sidebar a:hover,
+  .nav-sidebar a:hover,
+  .super-sidebar .active {
+    background: var(--gb-bg1) !important;
+    color: var(--gb-yellow) !important;
+  }
+
+  /* Panels, cards, modals and menus */
+  .card,
+  .panel,
+  .modal-content,
+  .dropdown-menu,
+  .gl-new-dropdown-panel,
+  .popover,
+  .issuable-discussion,
+  .timeline-entry,
+  .wiki-page-content,
+  .detail-page-description,
+  .commit-box,
+  .file-holder {
+    background: var(--gb-bg0) !important;
+    color: var(--gb-fg1) !important;
+    border-color: var(--gb-bg2) !important;
+  }
+
+  .card-header,
+  .card-footer,
+  .modal-header,
+  .modal-footer,
+  .gl-new-dropdown-inner,
+  .file-title,
+  .well {
+    background: var(--gb-bg1) !important;
+    border-color: var(--gb-bg2) !important;
+  }
+
+  /* Text and links */
+  h1, h2, h3, h4, h5, h6,
+  .title,
+  .gl-text-strong {
+    color: var(--gb-fg0) !important;
+  }
+
+  a,
+  .gl-link,
+  .author-link {
+    color: var(--gb-blue) !important;
+  }
+
+  a:hover,
+  .gl-link:hover {
+    color: var(--gb-aqua) !important;
+  }
+
+  .text-muted,
+  .gl-text-subtle,
+  .description,
+  .issuable-meta {
+    color: var(--gb-gray) !important;
+  }
+
+  /* Inputs */
+  input,
+  textarea,
+  select,
+  .form-control,
+  .gl-form-input,
+  .gl-form-textarea,
+  .gl-search-box-by-type-input {
+    background: var(--gb-bg0-hard) !important;
+    color: var(--gb-fg1) !important;
+    border-color: var(--gb-bg2) !important;
+  }
+
+  input:focus,
+  textarea:focus,
+  select:focus,
+  .form-control:focus {
+    border-color: var(--gb-blue) !important;
+    box-shadow: 0 0 0 1px var(--gb-blue) !important;
+  }
+
+  ::placeholder {
+    color: var(--gb-gray) !important;
+  }
+
+  /* Buttons */
+  .btn-default,
+  .gl-button:not(.btn-confirm):not(.btn-danger) {
+    background: var(--gb-bg1) !important;
+    color: var(--gb-fg1) !important;
+    border-color: var(--gb-bg2) !important;
+  }
+
+  .btn-default:hover,
+  .gl-button:hover {
+    background: var(--gb-bg2) !important;
+  }
+
+  .btn-confirm,
+  .btn-success {
+    background: #79740e !important;
+    color: var(--gb-fg0) !important;
+    border-color: var(--gb-green) !important;
+  }
+
+  .btn-danger {
+    background: #9d0006 !important;
+    color: var(--gb-fg0) !important;
+    border-color: var(--gb-red) !important;
+  }
+
+  /* Code */
+  pre,
+  code,
+  .code,
+  .blob-content,
+  .file-content,
+  .diff-file,
+  .md {
+    background: var(--gb-bg0-hard) !important;
+    color: var(--gb-fg1) !important;
+    border-color: var(--gb-bg2) !important;
+  }
+
+  .line_holder .line_content,
+  .line_holder .old_line,
+  .line_holder .new_line {
+    background-color: var(--gb-bg0-hard) !important;
+    color: var(--gb-fg1) !important;
+  }
+
+  .line_holder .old,
+  .diff-removed {
+    background: #3c1f1e !important;
+  }
+
+  .line_holder .new,
+  .diff-added {
+    background: #26351f !important;
+  }
+
+  .line-numbers,
+  .diff-line-num {
+    background: var(--gb-bg1) !important;
+    color: var(--gb-gray) !important;
+    border-color: var(--gb-bg2) !important;
+  }
+
+  /* Tables and lists */
+  table,
+  .table,
+  .content-list > li,
+  .issuable-list > li {
+    color: var(--gb-fg1) !important;
+    border-color: var(--gb-bg2) !important;
+  }
+
+  tr:hover,
+  .content-list > li:hover {
+    background: var(--gb-bg1) !important;
+  }
+
+  /* Labels and status colors */
+  .badge,
+  .gl-badge {
+    background: var(--gb-bg2) !important;
+    color: var(--gb-fg1) !important;
+    border-color: var(--gb-bg3) !important;
+  }
+
+  .text-success { color: var(--gb-green) !important; }
+  .text-danger  { color: var(--gb-red) !important; }
+  .text-warning { color: var(--gb-yellow) !important; }
+  .text-info    { color: var(--gb-aqua) !important; }
+
+  /* Scrollbars */
+  * {
+    scrollbar-color: var(--gb-bg3) var(--gb-bg0-hard);
+  }
+
+  ::selection {
+    background: var(--gb-bg3);
+    color: var(--gb-fg0);
+  }
+
+/* Repository files table */
+  .tree-holder,
+  .tree-content-holder,
+  .tree-table,
+  .tree-table-wrapper,
+  .repository-files,
+  .repository-content,
+  [data-testid="tree-content-holder"] {
+    background: var(--gb-bg0) !important;
+    color: var(--gb-fg1) !important;
+    border-color: var(--gb-bg2) !important;
+  }
+
+  .tree-table thead,
+  .tree-table-header,
+  .tree-controls,
+  .repository-file-header,
+  [data-testid="tree-header"] {
+    background: var(--gb-bg1) !important;
+    color: var(--gb-fg2) !important;
+    border-color: var(--gb-bg2) !important;
+  }
+
+  .tree-table tr,
+  .tree-item,
+  .tree-item-row,
+  [data-testid="tree-item"] {
+    background: var(--gb-bg0) !important;
+    color: var(--gb-fg1) !important;
+    border-color: var(--gb-bg1) !important;
+  }
+
+  .tree-table tbody tr:hover,
+  .tree-item:hover,
+  [data-testid="tree-item"]:hover {
+    background: var(--gb-bg1) !important;
+  }
+
+  .tree-item-file-name a,
+  .tree-item .file-name,
+  .tree-item .folder-name {
+    color: var(--gb-fg1) !important;
+  }
+
+  .tree-item-file-name svg,
+  .tree-item .file-icon,
+  .tree-item .folder-icon {
+    color: var(--gb-yellow) !important;
+    fill: currentColor !important;
+  }
+
+  .tree-commit-link,
+  .tree-commit-link a,
+  .tree-time-ago,
+  .tree-item .commit-row-message {
+    color: var(--gb-gray) !important;
+  }
+
+  /* Breadcrumbs and branch controls */
+  .repo-breadcrumb,
+  .breadcrumbs-container,
+  .ref-selector,
+  .project-source-path {
+    background: var(--gb-bg0) !important;
+    color: var(--gb-fg2) !important;
+    border-color: var(--gb-bg2) !important;
+  }
+
+  /* Pipeline list */
+  .pipelines,
+  .pipelines-container,
+  .pipeline-holder,
+  .pipeline-row,
+  .pipeline-list,
+  [data-testid="pipelines-table"] {
+    background: var(--gb-bg0) !important;
+    color: var(--gb-fg1) !important;
+    border-color: var(--gb-bg2) !important;
+  }
+
+  .pipelines table thead,
+  .pipelines .table-holder,
+  [data-testid="pipelines-table"] thead {
+    background: var(--gb-bg1) !important;
+    color: var(--gb-fg2) !important;
+  }
+
+  .pipelines table tr,
+  .pipeline-row,
+  [data-testid="pipeline-row"] {
+    background: var(--gb-bg0) !important;
+    border-color: var(--gb-bg2) !important;
+  }
+
+  .pipelines table tbody tr:hover,
+  .pipeline-row:hover,
+  [data-testid="pipeline-row"]:hover {
+    background: var(--gb-bg1) !important;
+  }
+
+  /* Pipeline graph */
+  .pipeline-graph,
+  .pipeline-graph-container,
+  .pipeline-graph-content,
+  .pipeline-visualization,
+  .ci-pipeline-graph,
+  [data-testid="pipeline-graph"] {
+    background: var(--gb-bg0-hard) !important;
+    color: var(--gb-fg1) !important;
+  }
+
+  .pipeline-graph .stage-column,
+  .pipeline-graph .stage-container,
+  .pipeline-graph .stage-name,
+  .pipeline-stage,
+  [data-testid="pipeline-stage"] {
+    background: var(--gb-bg0) !important;
+    color: var(--gb-fg0) !important;
+    border-color: var(--gb-bg2) !important;
+  }
+
+  .pipeline-graph .build,
+  .pipeline-graph .ci-job-component,
+  .pipeline-graph .job,
+  .pipeline-job,
+  [data-testid="pipeline-job"] {
+    background: var(--gb-bg1) !important;
+    color: var(--gb-fg1) !important;
+    border-color: var(--gb-bg2) !important;
+    box-shadow: none !important;
+  }
+
+  .pipeline-graph .build:hover,
+  .pipeline-graph .ci-job-component:hover,
+  .pipeline-graph .job:hover,
+  .pipeline-job:hover {
+    background: var(--gb-bg2) !important;
+    border-color: var(--gb-blue) !important;
+  }
+
+  .pipeline-graph svg line,
+  .pipeline-graph svg path:not([class*="status"]),
+  .pipeline-graph .build::before,
+  .pipeline-graph .build::after {
+    stroke: var(--gb-bg3) !important;
+    border-color: var(--gb-bg3) !important;
+  }
+
+  /* Pipeline job dropdowns and details */
+  .pipeline-graph-dropdown-menu,
+  .ci-job-dropdown,
+  .job-log,
+  .build-page,
+  .build-header,
+  .build-trace-container {
+    background: var(--gb-bg0-hard) !important;
+    color: var(--gb-fg1) !important;
+    border-color: var(--gb-bg2) !important;
+  }
+
+  .job-log,
+  .build-trace,
+  .build-trace code {
+    background: var(--gb-bg0-hard) !important;
+    color: var(--gb-fg2) !important;
+  }
+
+  /* Common GitLab utility backgrounds */
+  .gl-bg-white,
+  .gl-bg-gray-10,
+  .gl-bg-gray-50,
+  .gl-bg-neutral-0 {
+    background-color: var(--gb-bg0) !important;
+  }
+
+  .gl-bg-gray-100,
+  .gl-bg-neutral-10,
+  .gl-bg-subtle {
+    background-color: var(--gb-bg1) !important;
+  }
+
+  .gl-border-gray-100,
+  .gl-border-gray-200,
+  .gl-border-neutral-100,
+  .gl-border-subtle {
+    border-color: var(--gb-bg2) !important;
+  }
+
+ /* Main sidebar */
+  .super-sidebar,
+  .super-sidebar-inner,
+  .super-sidebar-nav,
+  .super-sidebar-navigation,
+  .contextual-nav,
+  .nav-sidebar,
+  [data-testid="super-sidebar"],
+  [data-testid="super-sidebar-nav"] {
+    background: var(--gb-bg0-hard) !important;
+    color: var(--gb-fg1) !important;
+    border-color: var(--gb-bg2) !important;
+  }
+  /* Sidebar headers and project information */
+  .super-sidebar .context-header,
+  .super-sidebar .context-header-container,
+  .super-sidebar .sidebar-context-title,
+  .super-sidebar .user-bar,
+  .super-sidebar .project-avatar-container,
+  [data-testid="sidebar-context-header"] {
+    background: var(--gb-bg0-hard) !important;
+    color: var(--gb-fg0) !important;
+    border-color: var(--gb-bg2) !important;
+  }
+  /* Navigation entries */
+  .super-sidebar .nav-item,
+  .super-sidebar .nav-link,
+  .super-sidebar .menu-item,
+  .super-sidebar li > a,
+  .nav-sidebar .nav-link,
+  [data-testid="super-sidebar"] a {
+    background: transparent !important;
+    color: var(--gb-fg2) !important;
+    border-color: transparent !important;
+  }
+  .super-sidebar .nav-item:hover,
+  .super-sidebar .nav-link:hover,
+  .super-sidebar .menu-item:hover,
+  .super-sidebar li > a:hover,
+  .nav-sidebar .nav-link:hover {
+    background: var(--gb-bg1) !important;
+    color: var(--gb-yellow) !important;
+  }
+  /* Active navigation entry */
+  .super-sidebar .active,
+  .super-sidebar .nav-link.active,
+  .super-sidebar .menu-item.active,
+  .super-sidebar li.active > a,
+  .nav-sidebar .active {
+    background: var(--gb-bg2) !important;
+    color: var(--gb-yellow) !important;
+    box-shadow: inset 3px 0 var(--gb-orange) !important;
+  }
+  /* Sidebar icons */
+  .super-sidebar svg,
+  .super-sidebar .gl-icon,
+  .nav-sidebar svg {
+    color: var(--gb-gray) !important;
+    fill: currentColor !important;
+  }
+  .super-sidebar a:hover svg,
+  .super-sidebar .active svg,
+  .nav-sidebar .active svg {
+    color: var(--gb-yellow) !important;
+  }
+  /* Section headings and separators */
+  .super-sidebar .section-header,
+  .super-sidebar .menu-section-title,
+  .super-sidebar .nav-heading {
+    color: var(--gb-gray) !important;
+  }
+  .super-sidebar hr,
+  .super-sidebar .divider,
+  .super-sidebar .gl-border-b {
+    border-color: var(--gb-bg2) !important;
+  }
+  /* Expandable submenus */
+  .super-sidebar .submenu,
+  .super-sidebar .nav-sub-items,
+  .super-sidebar .fly-out-list,
+  .super-sidebar .fly-out-panel,
+  .super-sidebar .sidebar-sub-level-items {
+    background: var(--gb-bg0-hard) !important;
+    color: var(--gb-fg1) !important;
+    border-color: var(--gb-bg2) !important;
+    box-shadow: 0 4px 12px #0008 !important;
+  }
+  /* Sidebar search and buttons */
+  .super-sidebar input,
+  .super-sidebar button,
+  .super-sidebar .gl-button {
+    background: var(--gb-bg1) !important;
+    color: var(--gb-fg1) !important;
+    border-color: var(--gb-bg2) !important;
+  }
+  .super-sidebar button:hover,
+  .super-sidebar .gl-button:hover {
+    background: var(--gb-bg2) !important;
+    color: var(--gb-yellow) !important;
+  }
+  /* Collapse/expand rail */
+  .super-sidebar-toggle,
+  .sidebar-toggle,
+  [data-testid="super-sidebar-collapse-button"] {
+    background: var(--gb-bg1) !important;
+    color: var(--gb-fg2) !important;
+    border-color: var(--gb-bg2) !important;
+  }
+
+.super-sidebar input,
+  .super-sidebar button,
+  .super-sidebar .gl-button,
+  .super-sidebar-toggle,
+  .sidebar-toggle,
+  [data-testid="super-sidebar-collapse-button"] {
+    background: var(--gb-bg0) !important;
+  }
+  .super-sidebar button:hover,
+  .super-sidebar .gl-button:hover,
+  .super-sidebar-toggle:hover,
+  .sidebar-toggle:hover {
+    background: var(--gb-bg1) !important;
+  }
+
+/* Commit list text */
+  .commit-list .commit-row-message,
+  .commit-list .commit-title,
+  .commit-list .commit-row-description,
+  .commit-list .item-title,
+  .commit-list .item-title a,
+  .commit-row-message,
+  [data-testid="commit-row"] a,
+  [data-testid="commit-title"] {
+    color: var(--gb-fg1) !important;
+  }
+  .commit-list .item-title a:hover,
+  .commit-row-message:hover,
+  [data-testid="commit-row"] a:hover {
+    color: var(--gb-fg0) !important;
+  }
+
+  /* Successful / open */
+  .gl-badge-success,
+  .badge-success,
+  .ci-status-icon-success,
+  .status-success,
+  .status-box-open {
+    color: var(--gb-green) !important;
+    background-color: #32361a !important;
+    border-color: #79740e !important;
+  }
+  /* Failed / closed */
+  .gl-badge-danger,
+  .badge-danger,
+  .ci-status-icon-failed,
+  .status-failed,
+  .status-box-closed {
+    color: var(--gb-red) !important;
+    background-color: #3c1f1e !important;
+    border-color: #9d0006 !important;
+  }
+  /* Running / informational */
+  .gl-badge-info,
+  .badge-info,
+  .ci-status-icon-running,
+  .status-running {
+    color: var(--gb-blue) !important;
+    background-color: #1e3338 !important;
+    border-color: #458588 !important;
+  }
+  /* Pending / warning */
+  .gl-badge-warning,
+  .badge-warning,
+  .ci-status-icon-pending,
+  .ci-status-icon-waiting-for-resource,
+  .status-pending {
+    color: var(--gb-yellow) !important;
+    background-color: #3b321c !important;
+    border-color: #d79921 !important;
+  }
+  /* Manual / scheduled */
+  .ci-status-icon-manual,
+  .ci-status-icon-scheduled,
+  .status-manual,
+  .status-scheduled,
+  .status-box-merged {
+    color: var(--gb-purple) !important;
+    background-color: #382738 !important;
+    border-color: #b16286 !important;
+  }
+  /* Canceled / skipped / neutral */
+  .gl-badge-neutral,
+  .ci-status-icon-canceled,
+  .ci-status-icon-skipped,
+  .ci-status-icon-created,
+  .status-canceled,
+  .status-skipped {
+    color: var(--gb-gray) !important;
+    background-color: var(--gb-bg1) !important;
+    border-color: var(--gb-bg3) !important;
+  }
+  /* Ensure status SVGs inherit Gruvbox colors */
+  [class*="ci-status-icon"] svg,
+  [class*="ci-status-icon"] .gl-icon {
+    color: inherit !important;
+    fill: currentColor !important;
+  }
+
+.ci-status-icon-success,
+  [data-testid="status_success"] {
+    color: var(--gb-green) !important;
+  }
+  .ci-status-icon-failed,
+  [data-testid="status_failed"] {
+    color: var(--gb-red) !important;
+  }
+  .ci-status-icon-running,
+  [data-testid="status_running"] {
+    color: var(--gb-blue) !important;
+  }
+  .ci-status-icon-pending,
+  .ci-status-icon-waiting-for-resource,
+  [data-testid="status_pending"] {
+    color: var(--gb-yellow) !important;
+  }
+  .ci-status-icon-manual,
+  .ci-status-icon-scheduled {
+    color: var(--gb-purple) !important;
+  }
+  .ci-status-icon-canceled,
+  .ci-status-icon-skipped,
+  .ci-status-icon-created {
+    color: var(--gb-gray) !important;
+  }
+  /* Override GitLab and sidebar icon colors */
+  [class*="ci-status-icon"] svg,
+  [class*="ci-status-icon"] svg path,
+  [class*="ci-status-icon"] svg circle,
+  [class*="ci-status-icon"] svg use,
+  [data-testid^="status_"] svg,
+  [data-testid^="status_"] svg path {
+    color: inherit !important;
+    fill: currentColor !important;
+  }
+  [class*="ci-status-icon"] svg [fill="none"] {
+    fill: none !important;
+    stroke: currentColor !important;
+  }
+
+/* GitLab CI icon variants */
+  .ci-icon.ci-icon-variant-success,
+  .ci-icon-variant-success [data-testid^="status_success"] {
+    color: var(--gb-green) !important;
+  }
+  .ci-icon.ci-icon-variant-danger,
+  .ci-icon-variant-danger [data-testid^="status_failed"] {
+    color: var(--gb-red) !important;
+  }
+  .ci-icon.ci-icon-variant-warning,
+  .ci-icon-variant-warning [data-testid^="status_warning"],
+  .ci-icon-variant-warning [data-testid^="status_pending"] {
+    color: var(--gb-yellow) !important;
+  }
+  .ci-icon.ci-icon-variant-info,
+  .ci-icon-variant-info [data-testid^="status_running"] {
+    color: var(--gb-blue) !important;
+  }
+  .ci-icon.ci-icon-variant-neutral,
+  .ci-icon.ci-icon-variant-muted {
+    color: var(--gb-gray) !important;
+  }
+  /* Force SVG and its referenced symbol to inherit */
+  .ci-icon svg.gl-fill-current,
+  .ci-icon [data-testid^="status_"],
+  .pipeline-mini-graph-stage-container .ci-icon svg {
+    color: inherit !important;
+    fill: currentColor !important;
+  }
+  /* Optional Gruvbox circle behind mini-pipeline icons */
+  [data-testid="pipeline-mini-graph-dropdown-toggle"] {
+    background: var(--gb-bg1) !important;
+    border: 1px solid var(--gb-bg3) !important;
+  }
+  [data-testid="pipeline-mini-graph-dropdown-toggle"]:hover {
+    background: var(--gb-bg2) !important;
+  }
+
+/* Success */
+  svg[data-testid*="status_success"],
+  svg[data-testid*="status_success"] use {
+    color: #b8bb26 !important;
+    fill: #b8bb26 !important;
+    stroke: #b8bb26 !important;
+  }
+  /* Failed */
+  svg[data-testid*="status_failed"],
+  svg[data-testid*="status_failed"] use {
+    color: #fb4934 !important;
+    fill: #fb4934 !important;
+    stroke: #fb4934 !important;
+  }
+  /* Running */
+  svg[data-testid*="status_running"],
+  svg[data-testid*="status_running"] use {
+    color: #83a598 !important;
+    fill: #83a598 !important;
+    stroke: #83a598 !important;
+  }
+  /* Pending */
+  svg[data-testid*="status_pending"],
+  svg[data-testid*="status_pending"] use {
+    color: #fabd2f !important;
+    fill: #fabd2f !important;
+    stroke: #fabd2f !important;
+  }
+  /* Manual */
+  svg[data-testid*="status_manual"],
+  svg[data-testid*="status_manual"] use {
+    color: #d3869b !important;
+    fill: #d3869b !important;
+    stroke: #d3869b !important;
+  }
+  /* Canceled and skipped */
+  svg[data-testid*="status_canceled"],
+  svg[data-testid*="status_skipped"],
+  svg[data-testid*="status_canceled"] use,
+  svg[data-testid*="status_skipped"] use {
+    color: #928374 !important;
+    fill: #928374 !important;
+    stroke: #928374 !important;
+  }
+
+svg[data-testid="status_success_borderless-icon"] {
+  color: #b8bb26 !important;
+  fill: #b8bb26 !important;
+}
+
+/* Manual / blocked icon and text */
+  [data-testid="ci-icon"]:has(svg[data-testid*="status_manual"]) {
+    color: #d3869b !important;
+  }
+  [data-testid="ci-icon"]:has(svg[data-testid*="status_manual"])
+    [data-testid="ci-icon-text"] {
+    color: #d3869b !important;
+  }
+  [data-testid="ci-icon"]:has(svg[data-testid*="status_manual"]) svg,
+  [data-testid="ci-icon"]:has(svg[data-testid*="status_manual"]) use {
+    color: #d3869b !important;
+    fill: #d3869b !important;
+    stroke: #d3869b !important;
+  }
+  /* Mini-pipeline button outlines by status */
+  [data-testid="pipeline-mini-graph-dropdown-toggle"] {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  [data-testid="pipeline-mini-graph-dropdown-toggle"]:has(
+    svg[data-testid*="status_success"]
+  ) {
+    border: 2px solid #b8bb26 !important;
+    background: #32361a !important;
+  }
+  [data-testid="pipeline-mini-graph-dropdown-toggle"]:has(
+    svg[data-testid*="status_failed"]
+  ) {
+    border: 2px solid #fb4934 !important;
+    background: #3c1f1e !important;
+  }
+  [data-testid="pipeline-mini-graph-dropdown-toggle"]:has(
+    svg[data-testid*="status_running"]
+  ) {
+    border: 2px solid #83a598 !important;
+    background: #1e3338 !important;
+  }
+  [data-testid="pipeline-mini-graph-dropdown-toggle"]:has(
+    svg[data-testid*="status_pending"]
+  ) {
+    border: 2px solid #fabd2f !important;
+    background: #3b321c !important;
+  }
+  [data-testid="pipeline-mini-graph-dropdown-toggle"]:has(
+    svg[data-testid*="status_manual"]
+  ) {
+    border: 2px solid #d3869b !important;
+    background: #382738 !important;
+  }
+  /* Pipeline status table cell */
+  td[data-label="Status"] {
+    color: var(--gb-fg1) !important;
+    background: var(--gb-bg0) !important;
+  }
+
+:root {
+  --ci-icon-neutral-background-color: #504945 !important;
+  --ci-icon-warning-background-color: #665c1e !important;
+  --ci-icon-success-background-color: #3c4818 !important;
+  --ci-icon-danger-background-color: #5a2420 !important;
+}
+}

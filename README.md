@@ -18,6 +18,8 @@ Some kwin effects I like ported to kwin6
 Css themes for websites
 
 - github gruvbox: https://userstyles.world/style/15463/github-gruvbox-extended
+- gitlab gruvbox: https://userstyles.world/style/29574/gitlab-gruvbox-dark
+- atlassian jira gruvbox: https://userstyles.world/style/29575/jira-gruvbox
 
 ## grub
 

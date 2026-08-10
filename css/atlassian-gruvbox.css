@@ -1,0 +1,435 @@
+/* ==UserStyle==
+@name         Jira Gruvbox Dark
+@version      20260810.12.59
+@namespace    atlassian.net
+@description  Dark gruvbox theme for altassian jira
+@author       Kloud
+@license      No License
+==/UserStyle== */
+
+@-moz-document domain("atlassian.net"), domain("cdn.prod.atlassian-dev.net") {
+:root,
+  html[data-color-mode],
+  html[data-theme] {
+    color-scheme: dark !important;
+
+    /* Gruvbox palette */
+    --gb-bg-hard: #1d2021;
+    --gb-bg: #282828;
+    --gb-bg-soft: #32302f;
+    --gb-bg-1: #3c3836;
+    --gb-bg-2: #504945;
+    --gb-bg-3: #665c54;
+    --gb-fg: #ebdbb2;
+    --gb-fg-muted: #bdae93;
+    --gb-fg-dim: #928374;
+    --gb-red: #fb4934;
+    --gb-green: #b8bb26;
+    --gb-yellow: #fabd2f;
+    --gb-blue: #83a598;
+    --gb-purple: #d3869b;
+    --gb-aqua: #8ec07c;
+    --gb-orange: #fe8019;
+
+    /* Atlassian surfaces */
+    --ds-surface: var(--gb-bg) !important;
+    --ds-surface-raised: var(--gb-bg-soft) !important;
+    --ds-surface-overlay: var(--gb-bg-1) !important;
+    --ds-surface-sunken: var(--gb-bg-hard) !important;
+    --ds-surface-hovered: var(--gb-bg-1) !important;
+    --ds-surface-pressed: var(--gb-bg-2) !important;
+    --ds-surface-selected: #3b4435 !important;
+    --ds-surface-selected-hovered: #46513d !important;
+    --ds-elevation-surface: var(--gb-bg) !important;
+    --ds-elevation-surface-raised: var(--gb-bg-soft) !important;
+    --ds-elevation-surface-overlay: var(--gb-bg-1) !important;
+    --ds-elevation-surface-sunken: var(--gb-bg-hard) !important;
+
+    /* Atlassian backgrounds */
+    --ds-background-neutral: var(--gb-bg-1) !important;
+    --ds-background-neutral-subtle: transparent !important;
+    --ds-background-neutral-hovered: var(--gb-bg-1) !important;
+    --ds-background-neutral-pressed: var(--gb-bg-2) !important;
+    --ds-background-neutral-bold: var(--gb-fg-dim) !important;
+    --ds-background-selected: #3b4435 !important;
+    --ds-background-selected-hovered: #46513d !important;
+    --ds-background-brand-bold: #5f7f76 !important;
+    --ds-background-brand-bold-hovered: #71958a !important;
+    --ds-background-brand-bold-pressed: #49645d !important;
+    --ds-background-brand-subtlest: #303b38 !important;
+    --ds-background-brand-subtlest-hovered: #394743 !important;
+    --ds-background-danger: #4b302d !important;
+    --ds-background-danger-hovered: #5c3530 !important;
+    --ds-background-danger-bold: #9d3f32 !important;
+    --ds-background-warning: #4a402b !important;
+    --ds-background-warning-bold: #a87913 !important;
+    --ds-background-success: #37402d !important;
+    --ds-background-success-bold: #6d7d20 !important;
+    --ds-background-information: #303b3d !important;
+    --ds-background-information-bold: #53786f !important;
+    --ds-background-discovery: #43343d !important;
+    --ds-background-discovery-bold: #8f5f72 !important;
+    --ds-background-accent-blue-subtlest: #303b3d !important;
+    --ds-background-accent-blue-subtler: #39494a !important;
+    --ds-background-accent-blue-subtle: #49645f !important;
+    --ds-background-accent-blue-bolder: #83a598 !important;
+
+    /* Text and links */
+    --ds-text: var(--gb-fg) !important;
+    --ds-text-subtle: var(--gb-fg-muted) !important;
+    --ds-text-subtlest: var(--gb-fg-dim) !important;
+    --ds-text-disabled: #665c54 !important;
+    --ds-text-inverse: var(--gb-bg-hard) !important;
+    --ds-text-brand: var(--gb-aqua) !important;
+    --ds-text-selected: var(--gb-green) !important;
+    --ds-text-information: var(--gb-blue) !important;
+    --ds-text-success: var(--gb-green) !important;
+    --ds-text-warning: var(--gb-yellow) !important;
+    --ds-text-danger: var(--gb-red) !important;
+    --ds-text-discovery: var(--gb-purple) !important;
+    --ds-link: var(--gb-blue) !important;
+    --ds-link-pressed: var(--gb-aqua) !important;
+
+    /* Borders, controls, and focus */
+    --ds-border: var(--gb-bg-2) !important;
+    --ds-border-bold: var(--gb-bg-3) !important;
+    --ds-border-focused: var(--gb-aqua) !important;
+    --ds-border-selected: var(--gb-green) !important;
+    --ds-border-input: var(--gb-bg-3) !important;
+    --ds-border-danger: var(--gb-red) !important;
+    --ds-icon: var(--gb-fg-muted) !important;
+    --ds-icon-subtle: var(--gb-fg-dim) !important;
+    --ds-icon-brand: var(--gb-aqua) !important;
+    --ds-icon-selected: var(--gb-green) !important;
+    --ds-icon-danger: var(--gb-red) !important;
+    --ds-blanket: rgb(29 32 33 / 78%) !important;
+    --ds-shadow-overlay: 0 8px 24px rgb(0 0 0 / 50%) !important;
+    --ds-shadow-raised: 0 2px 8px rgb(0 0 0 / 35%) !important;
+  }
+
+  html,
+  body,
+  #root,
+  #app,
+  #jira,
+  [data-testid="page-layout.root"] {
+    background: var(--gb-bg-hard) !important;
+    color: var(--gb-fg) !important;
+  }
+
+  body {
+    scrollbar-color: var(--gb-bg-3) var(--gb-bg-hard);
+  }
+
+  ::selection {
+    color: var(--gb-bg-hard);
+    background: var(--gb-yellow);
+  }
+
+  /* Top navigation and sidebars */
+  header,
+  nav,
+  [role="navigation"],
+  [data-testid*="navigation"],
+  [data-testid*="sidebar"] {
+    border-color: var(--gb-bg-2) !important;
+  }
+
+  header,
+  [role="banner"],
+  [data-vc="top-nav"],
+  [data-testid="atlassian-navigation--header"],
+  [data-testid*="global-navigation"],
+  [data-testid*="top-navigation"],
+  [data-testid*="top-nav"] {
+    background: linear-gradient(90deg, var(--gb-bg-hard), var(--gb-bg)) !important;
+    color: var(--gb-fg) !important;
+    border-color: var(--gb-bg-2) !important;
+    box-shadow: 0 1px 0 var(--gb-bg-2) !important;
+  }
+
+  header > div,
+  [role="banner"] > div,
+  [data-vc="top-nav"] > div,
+  [data-testid="atlassian-navigation--header"] > div {
+    background-color: transparent !important;
+    border-color: var(--gb-bg-2) !important;
+  }
+
+  header input,
+  [role="banner"] input,
+  [data-vc="top-nav"] input {
+    background-color: var(--gb-bg-soft) !important;
+  }
+
+  /* Cards, panels, dialogs, and menus */
+  [role="dialog"],
+  [role="menu"],
+  [role="listbox"],
+  [data-testid*="modal"],
+  [data-testid*="popover"],
+  [data-testid*="dropdown"],
+  [data-testid*="card"] {
+    color: var(--gb-fg) !important;
+    border-color: var(--gb-bg-2) !important;
+  }
+
+  [role="dialog"],
+  [role="menu"],
+  [role="listbox"] {
+    background-color: var(--gb-bg-soft) !important;
+    box-shadow: 0 12px 36px rgb(0 0 0 / 55%) !important;
+  }
+
+  /* Inputs and editors */
+  input,
+  textarea,
+  select,
+  [contenteditable="true"],
+  [role="textbox"] {
+    color: var(--gb-fg) !important;
+    caret-color: var(--gb-yellow) !important;
+    background-color: var(--gb-bg-hard) !important;
+    border-color: var(--gb-bg-3) !important;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--gb-fg-dim) !important;
+    opacity: 1 !important;
+  }
+
+  input:focus,
+  textarea:focus,
+  select:focus,
+  [contenteditable="true"]:focus,
+  [role="textbox"]:focus {
+    border-color: var(--gb-aqua) !important;
+    box-shadow: 0 0 0 2px rgb(142 192 124 / 25%) !important;
+    outline: none !important;
+  }
+
+  /* Links */
+  a:not([role="button"]) {
+    color: var(--gb-blue) !important;
+    text-decoration-color: rgb(131 165 152 / 45%) !important;
+  }
+
+  a:not([role="button"]):hover {
+    color: var(--gb-aqua) !important;
+    text-decoration-color: currentColor !important;
+  }
+
+  /* Project/space tabs are navigation labels, not content links. */
+  nav[aria-label="Space navigation"]
+    [data-testid="navigation-kit-ui-tab.ui.link-tab"],
+  nav[aria-label="Space navigation"]
+    [data-testid="navigation-kit-ui-tab-list.ui.more-trigger.more-tab"] {
+    color: var(--gb-fg-muted) !important;
+    text-decoration: none !important;
+  }
+
+  nav[aria-label="Space navigation"]
+    [data-testid="navigation-kit-ui-tab.ui.link-tab"]:hover,
+  nav[aria-label="Space navigation"]
+    [data-testid="navigation-kit-ui-tab-list.ui.more-trigger.more-tab"]:hover {
+    color: var(--gb-fg) !important;
+  }
+
+  nav[aria-label="Space navigation"] [aria-current="page"] {
+    color: var(--gb-yellow) !important;
+  }
+
+  /* Buttons */
+  button {
+    border-color: transparent;
+  }
+
+  button[aria-pressed="true"],
+  [role="button"][aria-pressed="true"],
+  [aria-selected="true"] {
+    color: var(--gb-green) !important;
+    background-color: #3b4435 !important;
+  }
+
+  button:focus-visible,
+  [role="button"]:focus-visible,
+  a:focus-visible {
+    outline: 2px solid var(--gb-yellow) !important;
+    outline-offset: 2px !important;
+  }
+
+  /* Issue tables and backlog rows */
+  table {
+    color: var(--gb-fg) !important;
+    background-color: var(--gb-bg) !important;
+    border-color: var(--gb-bg-2) !important;
+  }
+
+  th {
+    color: var(--gb-fg-muted) !important;
+    background-color: var(--gb-bg-soft) !important;
+    border-color: var(--gb-bg-2) !important;
+  }
+
+  td,
+  tr {
+    border-color: var(--gb-bg-1) !important;
+  }
+
+  tbody tr:hover,
+  [data-testid*="issue-row"]:hover,
+  [data-testid*="list-item"]:hover {
+    background-color: var(--gb-bg-1) !important;
+  }
+
+  /* Issue Navigator detail-view results */
+  [data-testid="issue-navigator.ui.issue-results.detail-view.card-list.card.list-item"] {
+    background: var(--gb-bg) !important;
+  }
+
+  [data-testid="issue-navigator.ui.issue-results.detail-view.card-list.card"] {
+    --_17wxfjt: var(--gb-bg-soft) !important;
+    color: var(--gb-fg) !important;
+    background: var(--gb-bg-soft) !important;
+    border-color: var(--gb-bg-2) !important;
+    box-shadow: inset 3px 0 0 transparent !important;
+  }
+
+  [data-testid="issue-navigator.ui.issue-results.detail-view.card-list.card"]:hover {
+    --_17wxfjt: var(--gb-bg-1) !important;
+    background: var(--gb-bg-1) !important;
+    border-color: var(--gb-bg-3) !important;
+  }
+
+  [data-testid="issue-navigator.ui.issue-results.detail-view.card-list.card"][aria-current="true"],
+  [data-testid="issue-navigator.ui.issue-results.detail-view.card-list.card"][aria-selected="true"],
+  [data-testid="issue-navigator.ui.issue-results.detail-view.card-list.card"]:focus {
+    --_17wxfjt: #303b3d !important;
+    background: #303b3d !important;
+    box-shadow: inset 3px 0 0 var(--gb-blue) !important;
+  }
+
+  [data-testid="issue-navigator.ui.issue-results.detail-view.card-list.card.summary"] {
+    color: var(--gb-fg) !important;
+  }
+
+  /* Kanban and scrum boards */
+  [data-testid*="board"],
+  [data-testid*="backlog"] {
+    border-color: var(--gb-bg-2) !important;
+  }
+
+  [data-testid*="column"] {
+    border-color: var(--gb-bg-2) !important;
+  }
+
+  [data-testid*="issue-card"],
+  [class*="issue-card"],
+  [class*="IssueCard"] {
+    background-color: var(--gb-bg-soft) !important;
+    border-color: var(--gb-bg-2) !important;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 35%) !important;
+  }
+
+  [data-testid*="issue-card"]:hover,
+  [class*="issue-card"]:hover,
+  [class*="IssueCard"]:hover {
+    background-color: var(--gb-bg-1) !important;
+    border-color: var(--gb-bg-3) !important;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 35%) !important;
+  }
+
+  /* Code, preformatted text, and inline mentions */
+  code,
+  pre,
+  kbd,
+  samp {
+    color: var(--gb-yellow) !important;
+    background-color: var(--gb-bg-hard) !important;
+    border-color: var(--gb-bg-2) !important;
+  }
+
+  pre {
+    box-shadow: inset 3px 0 0 var(--gb-orange);
+  }
+
+  [data-mention-id],
+  [data-testid*="mention"] {
+    color: var(--gb-aqua) !important;
+    background-color: #34413d !important;
+  }
+
+  /* Status lozenges: preserve meaning with Gruvbox accents */
+  [data-testid*="status"],
+  [class*="Status"] {
+    border-color: rgb(235 219 178 / 12%) !important;
+  }
+
+  /* Images and avatars should remain natural. */
+  img,
+  video,
+  canvas,
+  [data-testid*="avatar"] {
+    filter: none !important;
+  }
+
+  /* Less glare from embedded white content. */
+  iframe {
+    background-color: var(--gb-bg) !important;
+  }
+
+  /* Atlassian Forge app containers and their cross-origin iframe pages */
+  div[role="status"]:has([data-testid="hosted-resources-iframe-container"]),
+  [data-testid="hosted-resources-iframe-container"],
+  [data-testid="hosted-resources-iframe-container"] > div {
+    color: var(--gb-fg) !important;
+    background: var(--gb-bg) !important;
+  }
+
+  iframe[data-forge-iframe="true"],
+  iframe[data-testid="hosted-resources-iframe"] {
+    color-scheme: dark !important;
+    background: var(--gb-bg) !important;
+  }
+
+  body > #root,
+  body > #app,
+  body > div:first-child {
+    min-height: 100%;
+    background-color: var(--gb-bg-hard) !important;
+  }
+
+  /* Compact, rounded Jira polish */
+  [role="dialog"],
+  [role="menu"],
+  [role="listbox"],
+  [data-testid*="issue-card"],
+  [class*="issue-card"],
+  [class*="IssueCard"] {
+    border-radius: 8px !important;
+  }
+
+  * {
+    scrollbar-width: thin;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--gb-bg-hard);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--gb-bg-3);
+    border: 2px solid var(--gb-bg-hard);
+    border-radius: 999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--gb-fg-dim);
+  }
+}
