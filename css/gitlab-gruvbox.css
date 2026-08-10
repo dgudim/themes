@@ -1,9 +1,11 @@
 /* ==UserStyle==
 @name         GitLab Gruvbox Dark
 @version      20260810.12.57
-@namespace    gitlab.com
+@namespace    gitlab
 @description  Gruvbox theme for gitlab
-@license      No License
+@license      CC0
+@author       Kloud
+@homepageURL  https://github.com/dgudim/themes
 ==/UserStyle== */
 
 @-moz-document regexp(".*gitlab.*") {

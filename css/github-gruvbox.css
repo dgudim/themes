@@ -1,9 +1,11 @@
 /* ==UserStyle==
- @ *name           Github GruvBox Extended+
- @namespace      github.com
+ @name           Github GruvBox Extended+
+ @namespace      github
  @version        2.1.1
  @description    A GruvBox theme for GitHub.
+ @license        CC0
  @author         Kloud
+ @homepageURL    https://github.com/dgudim/themes
  ==/UserStyle== */
 
 @-moz-document domain("github.com") {

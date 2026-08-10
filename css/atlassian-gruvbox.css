@@ -3,8 +3,9 @@
 @version      20260810.12.59
 @namespace    atlassian.net
 @description  Dark gruvbox theme for altassian jira
+@license      CC0
 @author       Kloud
-@license      No License
+@homepageURL  https://github.com/dgudim/themes
 ==/UserStyle== */
 
 @-moz-document domain("atlassian.net"), domain("cdn.prod.atlassian-dev.net") {
