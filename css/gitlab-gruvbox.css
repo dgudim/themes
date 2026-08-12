@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name         GitLab Gruvbox Dark
-@version      20260810.12.57
+@version      20260812.15.32
 @namespace    gitlab
 @description  Gruvbox theme for gitlab
 @license      CC0
@@ -78,6 +78,31 @@
   .super-sidebar .active {
     background: var(--gb-bg1) !important;
     color: var(--gb-yellow) !important;
+  }
+
+  /* MR Overview / Commits / Pipelines / Changes sticky header */
+  .merge-request-sticky-header,
+  .merge-request-sticky-header::after,
+  .merge-request-sticky-header-wrapper,
+  .merge-request-tabs-container,
+  .merge-request-tabs,
+  .merge-request-tabs-holder,
+  #js-merge-sticky-header,
+  .js-tabs-affix {
+    background: var(--gb-bg0) !important;
+    border-color: var(--gb-bg2) !important;
+  }
+
+  .merge-request-tabs a,
+  .merge-request-tabs .nav-link,
+  .merge-request-tabs-container a {
+    color: var(--gb-fg2) !important;
+  }
+
+  .merge-request-tabs .active a,
+  .merge-request-tabs a.active,
+  .merge-request-tabs .gl-tab-nav-item-active {
+    color: var(--gb-fg0) !important;
   }
 
   /* Panels, cards, modals and menus */
@@ -185,41 +210,323 @@
     border-color: var(--gb-red) !important;
   }
 
-  /* Code */
-  pre,
-  code,
+  /* Code + Rapid Diffs tokens (GitLab uses --code-* vars, not legacy classes) */
+  :root,
+  .code,
+  .code.white,
+  .code.dark,
+  .code-syntax-highlight-theme,
+  .rd-diff-file,
+  .rd-text-view-content,
+  diff-file {
+    --code-background: var(--gb-bg0-hard) !important;
+    --code-empty-background: var(--gb-bg1) !important;
+    --code-border-color: var(--gb-bg2) !important;
+    --code-changed-border-color: #ffffff26 !important;
+    --code-border-lightness-adjust: 0.1 !important;
+
+    --code-line-number-background-color: var(--gb-bg0-hard) !important;
+    --code-line-number-color: #ffffff4d !important;
+    --code-line-number-hover-background-color: #504945 !important;
+    --code-line-number-hover-border-color: var(--gb-blue) !important;
+    --code-line-number-hover-color: var(--gb-fg0) !important;
+
+    --code-old-diff-line-number-background-color: #3c1f1e !important;
+    --code-old-diff-line-number-color: #806565 !important;
+    --code-old-diff-sign-color: #806565 !important;
+    --code-old-diff-background-color: #3c1f1e !important;
+    --code-old-diff-border-color: var(--gb-bg3) !important;
+    --code-old-diff-color: #806565 !important;
+    --code-old-inline-diff-background-color: #7A303083 !important;
+
+    --code-new-diff-line-number-background-color: #26351f !important;
+    --code-new-diff-line-number-color: #627165 !important;
+    --code-new-diff-sign-color: #627165 !important;
+    --code-new-diff-background-color: #26351f !important;
+    --code-new-diff-border-color: var(--gb-bg3) !important;
+    --code-new-diff-color: #627165 !important;
+    --code-new-inline-diff-background-color: #4A6A3088 !important;
+
+    --code-meta-diff-background-color: #343537 !important;
+    --code-meta-diff-color: var(--gb-fg2) !important;
+    --code-diff-hunk-header-background-color: #343537 !important;
+    --code-diff-hunk-header-color: var(--gb-fg2) !important;
+
+    --code-diff-expand-button-background-color: var(--gb-bg2) !important;
+    --code-diff-expand-button-color: var(--gb-fg2) !important;
+    --code-diff-expand-button-hover-background-color: var(--gb-bg3) !important;
+    --code-diff-expand-button-hover-color: var(--gb-fg0) !important;
+
+    --code-highlighted-line-background-color: #5a3e1b !important;
+    --code-highlighted-line-border-color: var(--gb-orange) !important;
+
+    --diff-addition-color: #26351f !important;
+    --diff-deletion-color: #3c1f1e !important;
+    --default-diff-color-addition: #288f2a !important;
+    --default-diff-color-deletion: #ff3333 !important;
+    --diff-expansion-background-color: var(--gb-bg2) !important;
+
+    --rd-line-added-background-color: #26351f !important;
+    --rd-line-removed-background-color: #3c1f1e !important;
+    --rd-line-link-color: var(--gb-gray) !important;
+  }
+
+  pre:not(.rd-line-text),
+  code:not(.rd-line-text *),
   .code,
   .blob-content,
   .file-content,
   .diff-file,
-  .md {
+  .md,
+  .rd-diff-file,
+  .rd-text-view-root,
+  .rd-text-view-content,
+  diff-file {
     background: var(--gb-bg0-hard) !important;
     color: var(--gb-fg1) !important;
     border-color: var(--gb-bg2) !important;
   }
 
+  .code.white,
+  .code.white pre.code,
+  .code.white .line_holder .line_content,
+  .code-syntax-highlight-theme,
+  .code-syntax-highlight-theme pre.code {
+    background-color: var(--gb-bg0-hard) !important;
+    color: var(--gb-fg1) !important;
+  }
+
+  /* Legacy table diffs */
   .line_holder .line_content,
   .line_holder .old_line,
-  .line_holder .new_line {
+  .line_holder .new_line,
+  .diff-td.line_content {
     background-color: var(--gb-bg0-hard) !important;
     color: var(--gb-fg1) !important;
   }
 
   .line_holder .old,
-  .diff-removed {
+  .diff-removed,
+  .line_content.old,
+  .diff-line-num.old {
     background: #3c1f1e !important;
   }
 
   .line_holder .new,
-  .diff-added {
+  .diff-added,
+  .line_content.new,
+  .diff-line-num.new {
     background: #26351f !important;
+  }
+
+  .line_holder.match .line_content,
+  .line_content.match {
+    background: #343537 !important;
+    color: var(--gb-fg2) !important;
   }
 
   .line-numbers,
   .diff-line-num {
-    background: var(--gb-bg1) !important;
+    background: var(--gb-bg0-hard) !important;
     color: var(--gb-gray) !important;
     border-color: var(--gb-bg2) !important;
+  }
+
+  /* Rapid Diffs */
+  .rd-text-view-content {
+    background-color: var(--code-background) !important;
+  }
+
+  /* Don't paint over add/remove row colors */
+  .rd-line-text,
+  .rd-line-text .line,
+  .rd-line-content pre,
+  .rd-line-content code {
+    background: transparent !important;
+  }
+
+  .rd-line-number,
+  .rd-line-content,
+  .rd-line-text {
+    color: var(--gb-fg1) !important;
+  }
+
+  .rd-line-number[data-change="added"],
+  .rd-line-content[data-change="added"] {
+    background-color: var(--code-new-diff-background-color) !important;
+  }
+
+  .rd-line-number[data-change="removed"],
+  .rd-line-content[data-change="removed"] {
+    background-color: var(--code-old-diff-background-color) !important;
+  }
+
+  .rd-line-number[data-change="meta"],
+  .rd-line-content[data-change="meta"] {
+    background-color: var(--code-meta-diff-background-color) !important;
+    color: var(--code-meta-diff-color) !important;
+  }
+
+  .rd-line-number-empty:not([data-change]) {
+    background-color: var(--code-empty-background) !important;
+  }
+
+  .rd-hunk-header,
+  .rd-hunk-header-content {
+    background-color: var(--code-diff-hunk-header-background-color) !important;
+    color: var(--code-diff-hunk-header-color) !important;
+  }
+
+  .rd-expand-lines-button {
+    background: var(--code-diff-expand-button-background-color) !important;
+    color: var(--code-diff-expand-button-color) !important;
+  }
+
+  .rd-expand-lines-button:hover {
+    background: var(--code-diff-expand-button-hover-background-color) !important;
+    color: var(--code-diff-expand-button-hover-color) !important;
+  }
+
+  .rd-diff-file-header,
+  .file-header-content,
+  .diff-file .file-title-flex-parent,
+  [data-testid="rd-diff-file-header"] {
+    background: var(--gb-bg1) !important;
+    color: var(--gb-fg1) !important;
+    border-color: var(--gb-bg2) !important;
+  }
+
+  /*
+   * White syntax theme keeps dark token colors; force gruvbox light-on-dark
+   * so Rapid Diffs / blobs are readable on our dark backgrounds.
+   */
+  :root,
+  .code,
+  .code.white,
+  .code.dark,
+  .code-syntax-highlight-theme {
+    --color-hljs-comment: var(--gb-gray) !important;
+    --color-hljs-keyword: var(--gb-red) !important;
+    --color-hljs-literal: var(--gb-purple) !important;
+    --color-hljs-type: var(--gb-yellow) !important;
+    --color-hljs-number: var(--gb-purple) !important;
+    --color-hljs-string: var(--gb-green) !important;
+    --color-hljs-regexp: var(--gb-aqua) !important;
+    --color-hljs-symbol: var(--gb-orange) !important;
+    --color-hljs-variable: var(--gb-blue) !important;
+    --color-hljs-title: var(--gb-fg1) !important;
+    --color-hljs-class: var(--gb-yellow) !important;
+    --color-hljs-function: var(--gb-aqua) !important;
+    --color-hljs-params: var(--gb-fg1) !important;
+    --color-hljs-attr: var(--gb-aqua) !important;
+    --color-hljs-builtin: var(--gb-orange) !important;
+    --color-hljs-tag: var(--gb-aqua) !important;
+    --color-hljs-name: var(--gb-fg1) !important;
+    --color-hljs-operator: var(--gb-aqua) !important;
+    --color-hljs-punctuation: var(--gb-fg1) !important;
+    --color-hljs-meta: var(--gb-gray) !important;
+    --color-hljs-link: var(--gb-blue) !important;
+    --color-hljs-subst: var(--gb-fg1) !important;
+    --color-hljs-constant: var(--gb-purple) !important;
+    --color-hljs-language: var(--gb-blue) !important;
+    --color-hljs-selector-tag: var(--gb-aqua) !important;
+    --color-hljs-selector-class: var(--gb-yellow) !important;
+    --color-hljs-selector-id: var(--gb-yellow) !important;
+    --color-hljs-selector-attr: var(--gb-aqua) !important;
+    --color-hljs-selector-pseudo: var(--gb-aqua) !important;
+    --color-hljs-selector-doctag: var(--gb-gray) !important;
+  }
+
+  .code .c, .code .cm, .code .cp, .code .c1, .code .cs, .code .cd,
+  .code.white .c, .code.white .cm, .code.white .cp, .code.white .c1, .code.white .cs, .code.white .cd,
+  .code-syntax-highlight-theme .c,
+  .rd-line-text .c, .rd-line-text .cm, .rd-line-text .cp, .rd-line-text .c1, .rd-line-text .cs, .rd-line-text .cd {
+    color: var(--gb-gray) !important;
+  }
+
+  .code .err, .code.white .err, .rd-line-text .err { color: var(--gb-red) !important; }
+  .code .k, .code .kc, .code .kd, .code .kn, .code .kp, .code .kr, .code .kt,
+  .code.white .k, .code.white .kc, .code.white .kd, .code.white .kn, .code.white .kp, .code.white .kr, .code.white .kt,
+  .rd-line-text .k, .rd-line-text .kc, .rd-line-text .kd, .rd-line-text .kn, .rd-line-text .kp, .rd-line-text .kr, .rd-line-text .kt {
+    color: var(--gb-red) !important;
+  }
+
+  .code .l, .code .ld, .code .m, .code .mf, .code .mh, .code .mi, .code .mo, .code .il,
+  .code.white .l, .code.white .ld, .code.white .m, .code.white .mf, .code.white .mh, .code.white .mi, .code.white .mo, .code.white .il,
+  .rd-line-text .l, .rd-line-text .ld, .rd-line-text .m, .rd-line-text .mf, .rd-line-text .mh, .rd-line-text .mi, .rd-line-text .mo, .rd-line-text .il {
+    color: var(--gb-purple) !important;
+  }
+
+  .code .n, .code .nb, .code .ni, .code .nl, .code .py, .code .bp, .code .p, .code .w,
+  .code.white .n, .code.white .nb, .code.white .ni, .code.white .nl, .code.white .py, .code.white .bp, .code.white .p, .code.white .w,
+  .rd-line-text .n, .rd-line-text .nb, .rd-line-text .ni, .rd-line-text .nl, .rd-line-text .py, .rd-line-text .bp, .rd-line-text .p, .rd-line-text .w,
+  .rd-line-text .line {
+    color: var(--gb-fg1) !important;
+  }
+
+  .code .o, .code .ow, .code .gh, .code .gu, .code .nd, .code .nt,
+  .code.white .o, .code.white .ow, .code.white .gh, .code.white .gu, .code.white .nd, .code.white .nt,
+  .rd-line-text .o, .rd-line-text .ow, .rd-line-text .gh, .rd-line-text .gu, .rd-line-text .nd, .rd-line-text .nt {
+    color: var(--gb-aqua) !important;
+  }
+
+  .code .s, .code .sb, .code .s2, .code .sh, .code .sx, .code .sr, .code .s1, .code .ss, .code .gi,
+  .code.white .s, .code.white .sb, .code.white .s2, .code.white .sh, .code.white .sx, .code.white .sr, .code.white .s1, .code.white .ss, .code.white .gi,
+  .rd-line-text .s, .rd-line-text .sb, .rd-line-text .s2, .rd-line-text .sh, .rd-line-text .sx, .rd-line-text .sr, .rd-line-text .s1, .rd-line-text .ss, .rd-line-text .gi {
+    color: var(--gb-green) !important;
+  }
+
+  .code .nc, .code .nn, .code .kt, .code.white .nc, .code.white .nn,
+  .rd-line-text .nc, .rd-line-text .nn {
+    color: var(--gb-yellow) !important;
+  }
+
+  .code .na, .code .nf, .code .nx, .code .fm,
+  .code.white .na, .code.white .nf, .code.white .nx, .code.white .fm,
+  .rd-line-text .na, .rd-line-text .nf, .rd-line-text .nx, .rd-line-text .fm {
+    color: var(--gb-blue) !important;
+  }
+
+  .code .no, .code .ne, .code .nv, .code .vc, .code .vg, .code .vi, .code .gd,
+  .code.white .no, .code.white .ne, .code.white .nv, .code.white .vc, .code.white .vg, .code.white .vi, .code.white .gd,
+  .rd-line-text .no, .rd-line-text .ne, .rd-line-text .nv, .rd-line-text .vc, .rd-line-text .vg, .rd-line-text .vi, .rd-line-text .gd {
+    color: var(--gb-red) !important;
+  }
+
+  .code .se, .code .si, .code .sc,
+  .code.white .se, .code.white .si, .code.white .sc,
+  .rd-line-text .se, .rd-line-text .si, .rd-line-text .sc {
+    color: var(--gb-orange) !important;
+  }
+
+  .code .sd, .code .gp, .code.white .sd, .code.white .gp,
+  .rd-line-text .sd, .rd-line-text .gp {
+    color: var(--gb-gray) !important;
+  }
+
+  /* Word-level inline highlights — brighter than the line tint */
+  .idiff,
+  .inline-diff-added,
+  .line_content .idiff,
+  .rd-line-text .idiff,
+  .rd-line-content span.idiff {
+    background-color: var(--code-new-inline-diff-background-color) !important;
+  }
+
+  .idiff.deletion,
+  .idiff.addition.deletion,
+  .inline-diff-deleted,
+  .line_content.old span.idiff,
+  .rd-line-content[data-change="removed"] span.idiff,
+  .rd-line-text .idiff.deletion {
+    background-color: var(--code-old-inline-diff-background-color) !important;
+  }
+
+  .idiff.addition,
+  .line_content.new span.idiff,
+  .rd-line-content[data-change="added"] span.idiff,
+  .rd-line-text .idiff.addition {
+    background-color: var(--code-new-inline-diff-background-color) !important;
   }
 
   /* Tables and lists */
@@ -242,6 +549,88 @@
     background: var(--gb-bg2) !important;
     color: var(--gb-fg1) !important;
     border-color: var(--gb-bg3) !important;
+  }
+
+  /* Badge design tokens — icons use separate --gl-badge-*-icon-color vars */
+  :root {
+    --gl-badge-info-background-color-default: #1e3338 !important;
+    --gl-badge-info-text-color-default: var(--gb-blue) !important;
+    --gl-badge-info-icon-color-default: var(--gb-blue) !important;
+
+    --gl-badge-success-background-color-default: #32361a !important;
+    --gl-badge-success-text-color-default: var(--gb-green) !important;
+    --gl-badge-success-icon-color-default: var(--gb-green) !important;
+
+    --gl-badge-danger-background-color-default: #3c1f1e !important;
+    --gl-badge-danger-text-color-default: var(--gb-red) !important;
+    --gl-badge-danger-icon-color-default: var(--gb-red) !important;
+
+    --gl-badge-warning-background-color-default: #3b321c !important;
+    --gl-badge-warning-text-color-default: var(--gb-yellow) !important;
+    --gl-badge-warning-icon-color-default: var(--gb-yellow) !important;
+
+    --gl-badge-neutral-background-color-default: var(--gb-bg1) !important;
+    --gl-badge-neutral-text-color-default: var(--gb-fg1) !important;
+    --gl-badge-neutral-icon-color-default: var(--gb-fg2) !important;
+
+    --gl-badge-muted-background-color-default: var(--gb-bg2) !important;
+    --gl-badge-muted-text-color-default: var(--gb-fg2) !important;
+    --gl-badge-muted-icon-color-default: var(--gb-gray) !important;
+  }
+
+  .gl-badge .gl-badge-icon,
+  .gl-badge .gl-icon,
+  .gl-badge svg {
+    color: inherit !important;
+    fill: currentColor !important;
+  }
+
+  .gl-badge.badge-info,
+  .gl-badge-info,
+  .badge-info {
+    color: var(--gb-blue) !important;
+    background-color: #1e3338 !important;
+  }
+
+  .gl-badge.badge-info .gl-badge-icon,
+  .badge-info .gl-badge-icon {
+    color: var(--gb-blue) !important;
+  }
+
+  .gl-badge.badge-success,
+  .gl-badge-success,
+  .badge-success {
+    color: var(--gb-green) !important;
+    background-color: #32361a !important;
+  }
+
+  .gl-badge.badge-success .gl-badge-icon,
+  .badge-success .gl-badge-icon {
+    color: var(--gb-green) !important;
+  }
+
+  .gl-badge.badge-danger,
+  .gl-badge-danger,
+  .badge-danger {
+    color: var(--gb-red) !important;
+    background-color: #3c1f1e !important;
+  }
+
+  .gl-badge.badge-danger .gl-badge-icon,
+  .badge-danger .gl-badge-icon {
+    color: var(--gb-red) !important;
+  }
+
+  .gl-badge.badge-warning,
+  .gl-badge-warning,
+  .badge-warning {
+    color: var(--gb-yellow) !important;
+    background-color: #3b321c !important;
+  }
+
+  .gl-badge.badge-warning .gl-badge-icon,
+  .badge-warning .gl-badge-icon {
+    color: var(--gb-yellow) !important;
   }
 
   .text-success { color: var(--gb-green) !important; }
@@ -438,6 +827,96 @@
   .gl-bg-neutral-10,
   .gl-bg-subtle {
     background-color: var(--gb-bg1) !important;
+  }
+
+  /* MR widget feedback strips (merged = info, closed = danger) */
+  :root {
+    --gl-feedback-info-background-color: #1e3338 !important;
+    --gl-feedback-info-text-color: var(--gb-fg1) !important;
+    --gl-feedback-info-icon-color: var(--gb-blue) !important;
+    --gl-feedback-success-background-color: #32361a !important;
+    --gl-feedback-success-text-color: var(--gb-fg1) !important;
+    --gl-feedback-success-icon-color: var(--gb-green) !important;
+    --gl-feedback-warning-background-color: #3b321c !important;
+    --gl-feedback-warning-text-color: var(--gb-fg1) !important;
+    --gl-feedback-warning-icon-color: var(--gb-yellow) !important;
+    --gl-feedback-danger-background-color: #3c1f1e !important;
+    --gl-feedback-danger-text-color: var(--gb-fg1) !important;
+    --gl-feedback-danger-icon-color: var(--gb-red) !important;
+    --gl-feedback-neutral-background-color: var(--gb-bg1) !important;
+    --gl-feedback-neutral-text-color: var(--gb-fg1) !important;
+    --gl-feedback-neutral-icon-color: var(--gb-gray) !important;
+    --gl-icon-color-info: var(--gb-blue) !important;
+    --gl-alert-info-background-color: #1e3338 !important;
+    --gl-alert-success-background-color: #32361a !important;
+    --gl-alert-warning-background-color: #3b321c !important;
+    --gl-alert-danger-background-color: #3c1f1e !important;
+  }
+
+  .gl-bg-feedback-info,
+  .gl-bg-blue-50,
+  .mr-widget-body.gl-bg-feedback-info,
+  .widget-merge-status.gl-bg-feedback-info {
+    background-color: #1e3338 !important;
+    color: var(--gb-fg1) !important;
+  }
+
+  .gl-bg-feedback-danger,
+  .mr-widget-body.gl-bg-feedback-danger,
+  .widget-merge-status.gl-bg-feedback-danger {
+    background-color: #3c1f1e !important;
+    color: var(--gb-fg1) !important;
+  }
+
+  .gl-bg-feedback-success {
+    background-color: #32361a !important;
+    color: var(--gb-fg1) !important;
+  }
+
+  .gl-bg-feedback-warning {
+    background-color: #3b321c !important;
+    color: var(--gb-fg1) !important;
+  }
+
+  .mr-widget-body,
+  .widget-merge-status,
+  .mr-state-widget,
+  [data-testid="mr-widget"] {
+    border-color: var(--gb-bg2) !important;
+  }
+
+  .mr-widget-body a,
+  .widget-merge-status a {
+    color: var(--gb-blue) !important;
+  }
+
+  .mr-widget-body .gl-button:not(.btn-confirm):not(.btn-danger),
+  .widget-merge-status .gl-button:not(.btn-confirm):not(.btn-danger),
+  .state-container-action-buttons .gl-button {
+    background: var(--gb-bg1) !important;
+    color: var(--gb-fg1) !important;
+    border-color: var(--gb-bg3) !important;
+  }
+
+  .mr-widget-body .gl-button:hover,
+  .widget-merge-status .gl-button:hover,
+  .state-container-action-buttons .gl-button:hover {
+    background: var(--gb-bg2) !important;
+    color: var(--gb-fg0) !important;
+  }
+
+  .mr-widget-body .gl-icon,
+  .widget-merge-status .gl-icon,
+  .mr-widget-body svg[data-testid="merge-icon"],
+  .widget-merge-status svg {
+    color: var(--gb-blue) !important;
+    fill: currentColor !important;
+  }
+
+  .gl-bg-feedback-danger .gl-icon,
+  .gl-bg-feedback-danger svg {
+    color: var(--gb-red) !important;
+    fill: currentColor !important;
   }
 
   .gl-border-gray-100,
