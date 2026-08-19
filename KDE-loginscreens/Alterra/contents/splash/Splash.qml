@@ -1,24 +1,11 @@
 /*
- *   Copyright 2014 Marco Martin <mart@kde.org>
- *
- *   This program is free software; you can redistribute it and/or modify
- *   it under the terms of the GNU General Public License version 2,
- *   or (at your option) any later version, as published by the Free
- *   Software Foundation
- *
- *   This program is distributed in the hope that it will be useful,
- *   but WITHOUT ANY WARRANTY; without even the implied warranty of
- *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *   GNU General Public License for more details
- *
- *   You should have received a copy of the GNU General Public
- *   License along with this program; if not, write to the
- *   Free Software Foundation, Inc.,
- *   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
- */
+    SPDX-FileCopyrightText: 2014 Marco Martin <mart@kde.org>
 
-import QtQuick 2.5
-import QtQuick.Window 2.2
+    SPDX-License-Identifier: GPL-2.0-or-later
+*/
+
+import QtQuick
+import org.kde.kirigami as Kirigami
 
 Rectangle {
     id: root
@@ -27,7 +14,7 @@ Rectangle {
     property int stage
 
     onStageChanged: {
-        if (stage == 1) {
+        if (stage == 2) {
             introAnimation.running = true;
         } else if (stage == 5) {
             introAnimation.target = busyIndicator;
@@ -41,77 +28,65 @@ Rectangle {
         id: content
         anchors.fill: parent
         opacity: 0
-        TextMetrics {
-            id: units
-            text: "M"
-            property int gridUnit: boundingRect.height
-            property int largeSpacing: units.gridUnit
-            property int smallSpacing: Math.max(2, gridUnit/4)
+
+        AnimatedImage {
+            id: logo
+            readonly property real size: 367
+
+            anchors.centerIn: parent
+
+            asynchronous: true
+            source: "images/plasma_d.gif"
+            paused: false
+            width: size
+            height: size
+            fillMode: Image.PreserveAspectFit
+            smooth: false
         }
 
-        Rectangle {
-
-        property int sizeAnim: 367
-
-        id: imageSource
-        width:  sizeAnim
-        height: sizeAnim
-        color:  "transparent"
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.verticalCenter: parent.verticalCenter
-        clip: true;
- 
-        AnimatedImage { 
-            id: face
-            source: "images/plasma_d.gif"
-            paused: false 
-            anchors.horizontalCenter: parent.horizontalCenter
-            anchors.verticalCenter: parent.verticalCenter
-            width:  imageSource.sizeAnim - 7
-            height: imageSource.sizeAnim  - 7
-            smooth: false
-            visible: true 
-         }
-    }
-
-       Image {
+        // TODO: port to PlasmaComponents3.BusyIndicator
+        Image {
             id: busyIndicator
             //in the middle of the remaining space
-            y: parent.height - 150
+            y: parent.height - (parent.height - logo.y) / 2 - height / 2
             anchors.horizontalCenter: parent.horizontalCenter
-            anchors.margins: units.gridUnit
+            asynchronous: true
             source: "images/busywidget.svgz"
-            sourceSize.height: units.gridUnit * 2
-            sourceSize.width: units.gridUnit * 2
+            sourceSize.height: Kirigami.Units.gridUnit * 2
+            sourceSize.width: Kirigami.Units.gridUnit * 2
             RotationAnimator on rotation {
                 id: rotationAnimator
                 from: 0
                 to: 360
-                duration: 1500
+                // Not using a standard duration value because we don't want the
+                // animation to spin faster or slower based on the user's animation
+                // scaling preferences; it doesn't make sense in this context
+                duration: 2000
                 loops: Animation.Infinite
+                // Don't want it to animate at all if the user has disabled animations
+                running: Kirigami.Units.longDuration > 1
             }
         }
         Row {
-            opacity: 0.5
-            spacing: units.smallSpacing*2
+            spacing: Kirigami.Units.largeSpacing
             anchors {
                 bottom: parent.bottom
-                // right: parent.right
-                margins: units.gridUnit
+                horizontalCenter: parent.horizontalCenter
+                margins: Kirigami.Units.gridUnit
             }
-            anchors.horizontalCenter: parent.horizontalCenter
             Text {
                 color: "#e0e8f1"
-                // Work around Qt bug where NativeRendering breaks for non-integer scale factors
-                // https://bugreports.qt.io/browse/QTBUG-67007
-                renderType: Screen.devicePixelRatio % 1 !== 0 ? Text.QtRendering : Text.NativeRendering
                 anchors.verticalCenter: parent.verticalCenter
                 text: "Welcome to Alterra"
+                Accessible.name: text
+                Accessible.role: Accessible.StaticText
+                textFormat: Text.PlainText
             }
             Image {
+                asynchronous: true
                 source: "images/kde.svgz"
-                sourceSize.height: units.gridUnit * 2
-                sourceSize.width: units.gridUnit * 2
+                sourceSize.height: Kirigami.Units.gridUnit * 2
+                sourceSize.width: Kirigami.Units.gridUnit * 2
             }
         }
     }
@@ -122,7 +97,7 @@ Rectangle {
         target: content
         from: 0
         to: 1
-        duration: 1000
+        duration: Kirigami.Units.veryLongDuration * 2
         easing.type: Easing.InOutQuad
     }
 }
