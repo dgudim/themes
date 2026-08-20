@@ -1,5 +1,5 @@
 /*
-    SPDX-FileCopyrightText: 2014 Marco Martin <mart@kde.org>
+    SPDX-FileCopyrightText: 2026 dgudim <dgudim@gmail.com>
 
     SPDX-License-Identifier: GPL-2.0-or-later
 */
@@ -9,7 +9,7 @@ import org.kde.kirigami as Kirigami
 
 Rectangle {
     id: root
-    color: "#313131"
+    color: "#000"
 
     property int stage
 
@@ -31,10 +31,11 @@ Rectangle {
 
         AnimatedImage {
             id: logo
-            asynchronous: true
-            source: "images/plasma_d.webp"
-            paused: false
             anchors.fill: parent
+
+            asynchronous: true
+            source: "images/splash.webp"
+            paused: false
             fillMode: Image.PreserveAspectCrop
             smooth: false
         }
@@ -42,9 +43,9 @@ Rectangle {
         // TODO: port to PlasmaComponents3.BusyIndicator
         Image {
             id: busyIndicator
-            //in the middle of the remaining space
-            y: parent.height - Kirigami.Units.gridUnit * 8
             anchors.horizontalCenter: parent.horizontalCenter
+            anchors.bottom: footer.top
+            anchors.bottomMargin: Kirigami.Units.gridUnit
             asynchronous: true
             source: "images/busywidget.svgz"
             sourceSize.height: Kirigami.Units.gridUnit * 2
@@ -62,7 +63,9 @@ Rectangle {
                 running: Kirigami.Units.longDuration > 1
             }
         }
+
         Row {
+            id: footer
             spacing: Kirigami.Units.largeSpacing
             anchors {
                 bottom: parent.bottom

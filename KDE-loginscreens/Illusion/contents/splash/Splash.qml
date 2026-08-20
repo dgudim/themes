@@ -1,5 +1,5 @@
 /*
-    SPDX-FileCopyrightText: 2014 Marco Martin <mart@kde.org>
+    SPDX-FileCopyrightText: 2026 dgudim <dgudim@gmail.com>
 
     SPDX-License-Identifier: GPL-2.0-or-later
 */
@@ -36,20 +36,20 @@ Rectangle {
             anchors.centerIn: parent
 
             asynchronous: true
-            source: "images/plasma_d.gif"
+            source: "images/splash.webp"
             paused: false
             width: size
             height: size
             fillMode: Image.PreserveAspectFit
-            smooth: false
+            smooth: true
         }
 
         // TODO: port to PlasmaComponents3.BusyIndicator
         Image {
             id: busyIndicator
-            //in the middle of the remaining space
-            y: parent.height - (parent.height - logo.y) / 2 - height / 2
             anchors.horizontalCenter: parent.horizontalCenter
+            anchors.bottom: footer.top
+            anchors.bottomMargin: Kirigami.Units.gridUnit
             asynchronous: true
             source: "images/busywidget.svgz"
             sourceSize.height: Kirigami.Units.gridUnit * 2
@@ -67,7 +67,9 @@ Rectangle {
                 running: Kirigami.Units.longDuration > 1
             }
         }
+
         Row {
+            id: footer
             spacing: Kirigami.Units.largeSpacing
             anchors {
                 bottom: parent.bottom
@@ -75,7 +77,7 @@ Rectangle {
                 margins: Kirigami.Units.gridUnit
             }
             Text {
-                color: "#e0e8f1"
+                color: "#e76d6e"
                 anchors.verticalCenter: parent.verticalCenter
                 text: "Look at me go"
                 Accessible.name: text

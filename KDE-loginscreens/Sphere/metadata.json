@@ -3,18 +3,17 @@
     "KPlugin": {
         "Authors": [
             {
-                "Email": "",
+                "Email": "dgudim@gmail.com",
                 "Name": "kloud"
             }
         ],
         "Category": "",
-        "Description": "Sphere for for Plasma6",
+        "Description": "Sphere for Plasma 6",
         "Id": "Sphere",
         "License": "GPLv3",
         "Name": "Sphere",
-        "Website": ""
+        "Website": "https://github.com/dgudim/themes"
     },
     "Keywords": "Desktop;Workspace;Appearance;Look and Feel;Logout;Lock;Suspend;Shutdown;Hibernate;",
     "X-Plasma-APIVersion": "2"
 }
-

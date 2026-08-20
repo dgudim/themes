@@ -1,0 +1,19 @@
+{
+    "KPackageStructure": "Plasma/LookAndFeel",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "dgudim@gmail.com",
+                "Name": "kloud"
+            }
+        ],
+        "Category": "",
+        "Description": "Dyson sphere for Plasma 6",
+        "Id": "DysonSphere",
+        "License": "GPLv3",
+        "Name": "Dyson sphere",
+        "Website": "https://github.com/dgudim/themes"
+    },
+    "Keywords": "Desktop;Workspace;Appearance;Look and Feel;Logout;Lock;Suspend;Shutdown;Hibernate;",
+    "X-Plasma-APIVersion": "2"
+}

@@ -1,5 +1,5 @@
 /*
-    SPDX-FileCopyrightText: 2014 Marco Martin <mart@kde.org>
+    SPDX-FileCopyrightText: 2026 dgudim <dgudim@gmail.com>
 
     SPDX-License-Identifier: GPL-2.0-or-later
 */
@@ -26,10 +26,11 @@ Rectangle {
 
         AnimatedImage {
             id: logo
-            asynchronous: true
-            source: "images/plasma_d.gif"
-            paused: false
             anchors.fill: parent
+
+            asynchronous: true
+            source: "images/splash.webp"
+            paused: false
             fillMode: Image.PreserveAspectCrop
             smooth: false
         }

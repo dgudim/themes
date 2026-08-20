@@ -3,18 +3,17 @@
     "KPlugin": {
         "Authors": [
             {
-                "Email": "",
+                "Email": "dgudim@gmail.com",
                 "Name": "kloud"
             }
         ],
         "Category": "",
-        "Description": "Alterra for for Plasma6",
+        "Description": "Alterra for Plasma 6",
         "Id": "Alterra",
         "License": "GPLv3",
         "Name": "Alterra",
-        "Website": ""
+        "Website": "https://github.com/dgudim/themes"
     },
     "Keywords": "Desktop;Workspace;Appearance;Look and Feel;Logout;Lock;Suspend;Shutdown;Hibernate;",
     "X-Plasma-APIVersion": "2"
 }
-
