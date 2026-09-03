@@ -421,6 +421,7 @@ def render_metadata(args: argparse.Namespace) -> str:
             "Id": args.id,
             "License": "GPLv3",
             "Name": args.name,
+            "Version": args.version,
             "Website": WEBSITE,
         },
         "Keywords": "Desktop;Workspace;Appearance;Look and Feel;Logout;Lock;Suspend;Shutdown;Hibernate;",
@@ -437,6 +438,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     )
     parser.add_argument("media", type=Path, help="Source image or video")
     parser.add_argument("--id", required=True, help="Package id and folder name next to this script")
+    parser.add_argument("--version", default="1.0", help="Package version written to metadata.json")
     parser.add_argument("--name", help="Display name (default: --id)")
     parser.add_argument("--description", help="Plugin description")
     parser.add_argument(

@@ -12,6 +12,7 @@
         "Id": "Lagtrain",
         "License": "GPLv3",
         "Name": "Lagtrain",
+        "Version": "2.0.1",
         "Website": "https://github.com/dgudim/themes"
     },
     "Keywords": "Desktop;Workspace;Appearance;Look and Feel;Logout;Lock;Suspend;Shutdown;Hibernate;",

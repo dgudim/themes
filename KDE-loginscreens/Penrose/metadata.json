@@ -8,10 +8,11 @@
             }
         ],
         "Category": "",
-        "Description": "Illusion for Plasma 6",
-        "Id": "Illusion",
+        "Description": "Penrose for Plasma 6",
+        "Id": "Penrose",
         "License": "GPLv3",
-        "Name": "Illusion",
+        "Name": "Penrose",
+        "Version": "2.0.1",
         "Website": "https://github.com/dgudim/themes"
     },
     "Keywords": "Desktop;Workspace;Appearance;Look and Feel;Logout;Lock;Suspend;Shutdown;Hibernate;",

@@ -12,6 +12,7 @@
         "Id": "GruvboxRubiksCube",
         "License": "GPLv3",
         "Name": "Gruvbox Rubik's cube",
+        "Version": "1.0.1",
         "Website": "https://github.com/dgudim/themes"
     },
     "Keywords": "Desktop;Workspace;Appearance;Look and Feel;Logout;Lock;Suspend;Shutdown;Hibernate;",

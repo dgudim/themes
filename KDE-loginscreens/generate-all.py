@@ -20,6 +20,7 @@ SPLASHES: list[tuple[str, list[str]]] = [
         "20d0d1abf7278b9c.webp",
         [
             "--id", "DysonSphere",
+            "--version", "1.0.1",
             "--name", "Dyson sphere",
             "--description", "Dyson sphere for Plasma 6",
             "--align", "center",
@@ -35,6 +36,7 @@ SPLASHES: list[tuple[str, list[str]]] = [
         "06bb6068795f734e.mp4",
         [
             "--id", "Sphere",
+            "--version", "1.0.1",
             "--name", "Sphere",
             "--description", "Sphere for Plasma 6",
             "--align", "center",
@@ -49,6 +51,7 @@ SPLASHES: list[tuple[str, list[str]]] = [
         "Alterra.gif",
         [
             "--id", "Alterra",
+            "--version", "2.0.1",
             "--name", "Alterra",
             "--description", "Alterra for Plasma 6",
             "--align", "center",
@@ -62,6 +65,7 @@ SPLASHES: list[tuple[str, list[str]]] = [
         "Lain.gif",
         [
             "--id", "Lain",
+            "--version", "2.0.1",
             "--name", "Lain",
             "--description", "Lain for Plasma 6",
             "--align", "center",
@@ -74,9 +78,10 @@ SPLASHES: list[tuple[str, list[str]]] = [
     (
         "0b177a82c9d03c78.mp4",
         [
-            "--id", "Illusion",
-            "--name", "Illusion",
-            "--description", "Illusion for Plasma 6",
+            "--id", "Penrose",
+            "--version", "2.0.1",
+            "--name", "Penrose",
+            "--description", "Penrose for Plasma 6",
             "--align", "center",
             "--size", "550",
             "--background", "#49294E",
@@ -89,6 +94,7 @@ SPLASHES: list[tuple[str, list[str]]] = [
         "GruvboxHexagon1.gif",
         [
             "--id", "GruvboxHexagon1",
+            "--version", "1.0.1",
             "--name", "Gruvbox hexagon (variant 1)",
             "--description", "Gruvbox hexagon for Plasma 6",
             "--align", "center",
@@ -102,6 +108,7 @@ SPLASHES: list[tuple[str, list[str]]] = [
         "GruvboxHexagon2.gif",
         [
             "--id", "GruvboxHexagon2",
+            "--version", "1.0.1",
             "--name", "Gruvbox hexagon (variant 2)",
             "--description", "Gruvbox hexagon for Plasma 6",
             "--align", "center",
@@ -115,6 +122,7 @@ SPLASHES: list[tuple[str, list[str]]] = [
         "GruvboxHexagon3.gif",
         [
             "--id", "GruvboxHexagon3",
+            "--version", "1.0.1",
             "--name", "Gruvbox hexagon (variant 3)",
             "--description", "Gruvbox hexagon for Plasma 6",
             "--align", "center",
@@ -128,6 +136,7 @@ SPLASHES: list[tuple[str, list[str]]] = [
         "MatrixKDE.mp4",
         [
             "--id", "MatrixKDE",
+            "--version", "1.0.1",
             "--name", "Matrix code 'Welcome to KDE'",
             "--description", "Matrix for Plasma 6",
             "--align", "fill",
@@ -142,6 +151,7 @@ SPLASHES: list[tuple[str, list[str]]] = [
         "MatrixKDEGlow.mp4",
         [
             "--id", "MatrixKDEGlow",
+            "--version", "1.0.1",
             "--name", "Matrix code 'Welcome to KDE' (glowing)",
             "--description", "Matrix for Plasma 6",
             "--align", "fill",
@@ -156,6 +166,7 @@ SPLASHES: list[tuple[str, list[str]]] = [
         "Lagtrain.gif",
         [
             "--id", "Lagtrain",
+            "--version", "2.0.1",
             "--name", "Lagtrain",
             "--description", "Lagtrain for Plasma 6",
             "--align", "fill",
@@ -170,6 +181,7 @@ SPLASHES: list[tuple[str, list[str]]] = [
         "GruvboxRubiksCube.gif",
         [
             "--id", "GruvboxRubiksCube",
+            "--version", "1.0.1",
             "--name", "Gruvbox Rubik's cube",
             "--description", "Gruvbox Rubik's cube for Plasma 6",
             "--align", "fill",
@@ -184,6 +196,7 @@ SPLASHES: list[tuple[str, list[str]]] = [
         "cool_animation_b1_sektor_information_overload_youtube.mp4",
         [
             "--id", "Overload",
+            "--version", "2.0.2",
             "--name", "Overload",
             "--description", "Overload for Plasma 6",
             "--align", "fill",
