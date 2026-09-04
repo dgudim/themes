@@ -9,7 +9,7 @@ import org.kde.kirigami as Kirigami
 
 Rectangle {
     id: root
-    color: "#49294E"
+    color: "#4b2c4f"
 
     property int stage
 
